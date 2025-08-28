@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+}
+
+@layer components {
+  .article-content {
+    @apply max-w-3xl mx-auto leading-relaxed;
+  }
+
+  .article-content h1 {
+    @apply text-4xl font-bold mt-8 mb-4 text-gray-900;
+  }
+
+  .article-content h2 {
+    @apply text-3xl font-semibold mt-6 mb-3 text-gray-800;
+  }
+
+  .article-content h3 {
+    @apply text-2xl font-medium mt-5 mb-2 text-gray-700;
+  }
+
+  .article-content p {
+    @apply mb-4 text-gray-600;
+  }
+
+  .article-content ul, .article-content ol {
+    @apply mb-4 pl-6;
+  }
+
+  .article-content ul {
+    @apply list-disc;
+  }
+
+  .article-content ol {
+    @apply list-decimal;
+  }
+
+  .article-content li {
+    @apply mb-2;
+  }
+
+  .article-content a {
+    @apply text-blue-600 hover:text-blue-800 underline;
+  }
+
+  .article-content blockquote {
+    @apply border-l-4 border-gray-300 pl-4 italic my-4;
+  }
+
+  .article-content code {
+    @apply bg-gray-100 rounded px-1 py-0.5 font-mono text-sm;
+  }
+
+  .article-content pre {
+    @apply bg-gray-100 rounded p-4 overflow-x-auto mb-4;
+  }
+
+  .article-content img {
+    @apply max-w-full h-auto rounded-lg shadow-md my-4;
+  }
+
+  .article-content table {
+    @apply w-full border-collapse border border-gray-300 my-4;
+  }
+
+  .article-content th, .article-content td {
+    @apply border border-gray-300 px-4 py-2;
+  }
+
+  .article-content th {
+    @apply bg-gray-100 font-semibold;
+  }
+}
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.custom-collapse.dark-mode {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.custom-collapse.dark-mode .ant-collapse-item {
+  border-bottom-color: #374151;
+}
+
+.custom-collapse.dark-mode .ant-collapse-header {
+  color: #e5e7eb !important;
+}
+
+.custom-collapse.dark-mode .ant-collapse-content {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+.custom-panel.dark-mode {
+  background-color: #1f2937;
+}
+
+.custom-content.dark-mode {
+  color: #e5e7eb;
+}
+
+.dark-mode .ant-list-item {
+  border-bottom-color: #374151;
+}
+
+.dark-mode .ant-collapse-arrow {
+  color: #e5e7eb;
+}
