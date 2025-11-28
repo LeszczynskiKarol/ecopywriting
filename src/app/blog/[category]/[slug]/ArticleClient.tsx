@@ -3,6 +3,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Article } from '@/types/Article'
 import { formatDate } from '@/utils/dateFormatter'
@@ -15,11 +16,20 @@ export default function ArticleClient({ article }: ArticleClientProps) {
   return (
     <motion.article
       className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
-      initial={{ opacity: 0, y: 20 }}
+      initial={false}  // ← NIE animuj przy pierwszym renderowaniu (zachowaj stan z SSR)
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <img src={article.featuredImage} alt={article.title} className="w-full h-64 object-cover" />
+      <div className="relative w-full h-64">
+        <Image
+          src={article.featuredImage}
+          alt={article.title}
+          fill
+          className="object-cover"
+          priority  // ← ładuj obrazek od razu, nie lazy
+          sizes="(max-width: 768px) 100vw, 75vw"
+        />
+      </div>
       <div className="p-6">
         <Link href={`/blog/${article.categorySlug}`}>
           <span className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm mb-2 block">
