@@ -1,6 +1,6 @@
 // src/app/admin/categories/edit/[id].tsx
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import Layout from '../../../../components/layout/Layout';
 import { useAuth } from '../../../../context/AuthContext';
 
@@ -10,7 +10,8 @@ const EditCategoryPage = () => {
   const [metaTitle, setMetaTitle] = useState('');
   const [metaDescription, setMetaDescription] = useState('');
   const router = useRouter();
-  const { id } = router;
+  const params = useParams();
+  const id = params.id as string;
   const { user } = useAuth();
 
   useEffect(() => {
